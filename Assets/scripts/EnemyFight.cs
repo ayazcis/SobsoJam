@@ -49,6 +49,7 @@ public class EnemyFight : MonoBehaviour
 		{
 			diedE = true;
 			m_animator.SetTrigger("Death");
+			Destroy(gameObject, 1f);
 		}
 
 		if (Vector2.Distance(transform.position, player.transform.position) <= detectionRadius  && !diedE)
@@ -100,9 +101,13 @@ public class EnemyFight : MonoBehaviour
 	}
 	public void DamageRecivePlayer()
 	{
-		fightingBandit.m_animator.SetTrigger("Hurt");
-		fightingBandit.health -= 5; // Her seferinde 10 hasar alacak, deðiþtirebilirsiniz
+		if (Vector2.Distance(transform.position, player.transform.position) <= attackDistance)
+		{
+			fightingBandit.m_animator.SetTrigger("Hurt");
+			fightingBandit.health -= 5; // Her seferinde 10 hasar alacak, deðiþtirebilirsiniz
 			Debug.Log(fightingBandit.health + "  HEALTH ");
+		}
+			
 		
 	}
 
