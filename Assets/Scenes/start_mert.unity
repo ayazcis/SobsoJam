@@ -1103,7 +1103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &833234805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1491,7 +1491,7 @@ Transform:
   m_GameObject: {fileID: 1177493591}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.81, y: 0.34, z: 0}
+  m_LocalPosition: {x: -13.81, y: 0.16, z: 0}
   m_LocalScale: {x: 0.5, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3361,18 +3361,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Preview
       objectReference: {fileID: 0}
-    - target: {fileID: 6095357279794377513, guid: 111b1513e75120f4e8e0c95fe9e7c91c, type: 3}
-      propertyPath: m_Size.x
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 6638745575364754391, guid: 111b1513e75120f4e8e0c95fe9e7c91c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6638745575364754391, guid: 111b1513e75120f4e8e0c95fe9e7c91c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.6
-      objectReference: {fileID: 0}
     - target: {fileID: 6638745575364754391, guid: 111b1513e75120f4e8e0c95fe9e7c91c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.3
@@ -3413,13 +3401,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9095994121928311379, guid: 111b1513e75120f4e8e0c95fe9e7c91c, type: 3}
-      propertyPath: m_Size.x
-      value: 377.76825
-      objectReference: {fileID: 0}
-    - target: {fileID: 9095994121928311379, guid: 111b1513e75120f4e8e0c95fe9e7c91c, type: 3}
-      propertyPath: m_Offset.x
-      value: -9.352997
+    - target: {fileID: 6882368638633300077, guid: 111b1513e75120f4e8e0c95fe9e7c91c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.655
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3650,7 +3634,7 @@ Transform:
   m_GameObject: {fileID: 7859852903115167728}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 1.74, z: -10}
+  m_LocalPosition: {x: 0.015, y: 2.07, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
