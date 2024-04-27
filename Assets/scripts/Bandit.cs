@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class Bandit : MonoBehaviour {
 
@@ -13,11 +14,21 @@ public class Bandit : MonoBehaviour {
     private bool                m_combatIdle = false;
     private bool                m_isDead = false;
 
+    public int water;
+    public int food;
+    public int health;
+
+    [SerializeField] public TMP_Text Text_water;
+
     // Use this for initialization
     void Start () {
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
+        water = 100;
+        food = 100;
+        health = 100;
+        //Text_water = new TextMeshPro();
     }
 	
 	// Update is called once per frame
@@ -51,7 +62,7 @@ public class Bandit : MonoBehaviour {
 
         // -- Handle Animations --
         //Death
-        if (Input.GetKeyDown("e")) {
+        /*if (Input.GetKeyDown("e")) {
             if(!m_isDead)
                 m_animator.SetTrigger("Death");
             else
@@ -63,15 +74,15 @@ public class Bandit : MonoBehaviour {
         //Hurt
         else if (Input.GetKeyDown("q"))
             m_animator.SetTrigger("Hurt");
-
+        */
         //Attack
-        else if(Input.GetMouseButtonDown(0)) {
+        if(Input.GetMouseButtonDown(0)) {
             m_animator.SetTrigger("Attack");
         }
 
         //Change between idle and combat idle
-        else if (Input.GetKeyDown("f"))
-            m_combatIdle = !m_combatIdle;
+        //else if (Input.GetKeyDown("f"))
+         //   m_combatIdle = !m_combatIdle;
 
         //Jump
         else if (Input.GetKeyDown("space") && m_grounded) {
@@ -93,5 +104,27 @@ public class Bandit : MonoBehaviour {
         //Idle
         else
             m_animator.SetInteger("AnimState", 0);
+
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Checkpoint"))
+        {
+            food = food - 10;
+            water = water - 10;
+            Destroy(collision.gameObject);
+            Debug.Log("water :" + water + "\nfood :" + food);
+            updateText();
+        }
+    }
+
+
+    void updateText()
+    {
+        //Text_water.SetText(water.ToString());
+        Text_water.text = water.ToString();
+
     }
 }
