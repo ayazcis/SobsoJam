@@ -7,10 +7,12 @@ public class FightingBandit : MonoBehaviour
 
 	[SerializeField] float m_speed = 4.0f;
 	[SerializeField] float m_jumpForce = 7.5f;
+	
+	public EnemyFight enemyFight;
+	public GameObject enemy;
+	public float attackRange = 0.9f;
 
-
-
-	private Animator m_animator;
+	public Animator m_animator;
 	private Rigidbody2D m_body2d;
 	private Sensor_Bandit m_groundSensor;
 
@@ -20,7 +22,7 @@ public class FightingBandit : MonoBehaviour
 
 	public int water;
 	public int food;
-	public int health;
+	public int health = 100;
 
 	[SerializeField] public TMP_Text Text_water;
 
@@ -87,6 +89,10 @@ public class FightingBandit : MonoBehaviour
 		if (Input.GetMouseButtonDown(0))
 		{
 			m_animator.SetTrigger("Attack");
+			if(Vector2.Distance(transform.position, enemy.transform.position) <= attackRange)
+			{
+				DamageReciveEnemy();
+			}
 		}
 
 		//Change between idle and combat idle
@@ -136,6 +142,14 @@ public class FightingBandit : MonoBehaviour
 		//Text_water.SetText(water.ToString());
 		Text_water.text = water.ToString();
 
+	}
+
+
+
+	public void DamageReciveEnemy()
+	{
+		enemyFight.m_animator.SetTrigger("Hurt");
+		enemyFight.healthEnemy -= 5; // Her seferinde 10 hasar alacak, deðiþtirebilirsiniz
 	}
 }
 
