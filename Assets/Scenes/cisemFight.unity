@@ -855,8 +855,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 4
   m_jumpForce: 7.5
-  enemyFight: {fileID: 0}
-  enemy: {fileID: 0}
+  enemyFight: {fileID: 212652214563228357}
+  enemy: {fileID: 1463394042625314}
   attackRange: 0.9
   m_animator: {fileID: 0}
   water: 0
@@ -910,12 +910,13 @@ PolygonCollider2D:
     - - {x: 0.09375, y: 1.28125}
       - {x: -0.09375, y: 1.28125}
       - {x: -0.21875, y: 1.21875}
-      - {x: -0.33145237, y: 0.1875}
+      - {x: -0.4470756, y: 0.6610957}
+      - {x: -0.33145237, y: 0.17455691}
       - {x: -0.2584324, y: 0.15022781}
       - {x: -0.016853333, y: 0.035270393}
       - {x: 0.2751733, y: 0.136013}
-      - {x: 0.5625, y: 0.65625}
-      - {x: 0.5625, y: 0.78125}
+      - {x: 0.51751757, y: 0.6255802}
+      - {x: 0.5216069, y: 0.73422295}
       - {x: 0.5, y: 0.84375}
   m_UseDelaunayMesh: 0
 --- !u!212 &212652214563228356
@@ -984,7 +985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageTime: 1
   detectionRadius: 4
-  attackDistance: 0.9
+  attackDistance: 0.92
   runToEnemySpeed: 2
   player: {fileID: 1689865675754485}
   fightingBandit: {fileID: 212259379795786114}
@@ -1055,8 +1056,8 @@ PolygonCollider2D:
       - {x: -0.13481236, y: 1.1667849}
       - {x: -0.17430067, y: 1.076022}
       - {x: -0.25817847, y: 0.93920875}
-      - {x: -0.375, y: 0.71875}
-      - {x: -0.375, y: 0}
+      - {x: -0.34840298, y: 0.7069291}
+      - {x: -0.28929806, y: 0.011820912}
       - {x: 0.3125, y: 0}
       - {x: 0.375, y: 0.0625}
       - {x: 0.45378065, y: 0.4424418}
