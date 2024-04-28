@@ -6,18 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/cisemFight.unity
-    guid: 6a37d6e2301d7094b99abe302ceda715
-  - enabled: 1
-    path: Assets/Scenes/TavernIn.unity
-    guid: b13a1cfab874fdb498fbb9dfda29bcf4
+    path: Assets/Scenes/startScene.unity
+    guid: 31c9358eda05cfe429bc87084fdcc688
   - enabled: 1
     path: Assets/Scenes/start_mert.unity
     guid: 756d232d01f02a94bb9ed6bad15b70dd
+  - enabled: 1
+    path: Assets/Scenes/bossFightBandit.unity
+    guid: 77a94d97cffaa224eb148993943a0140
+  - enabled: 1
+    path: Assets/Scenes/TavernIn.unity
+    guid: b13a1cfab874fdb498fbb9dfda29bcf4
   - enabled: 1
     path: Assets/Scenes/KervanSarai.unity
     guid: 1557ea8b50c8cbf4d817dceeab28bb5b
   - enabled: 1
     path: Assets/Scenes/day2_tavern.unity
     guid: 23cda0b53daca6d48b51218bff12af1e
+  - enabled: 1
+    path: Assets/Scenes/cisemFight.unity
+    guid: 6a37d6e2301d7094b99abe302ceda715
   m_configObjects: {}
