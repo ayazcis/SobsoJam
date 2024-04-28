@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/startScene.unity
     guid: 31c9358eda05cfe429bc87084fdcc688
   - enabled: 1
+    path: Assets/Scenes/startVideo.unity
+    guid: c7d5eb5aa5cbfa840bdb4f6d01198370
+  - enabled: 1
     path: Assets/Scenes/start_mert.unity
     guid: 756d232d01f02a94bb9ed6bad15b70dd
   - enabled: 1
@@ -24,6 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/cisemFight.unity
     guid: 6a37d6e2301d7094b99abe302ceda715
   - enabled: 1
-    path: Assets/Scenes/endSCENE.unity
+    path: Assets/Scenes/endScene.unity
     guid: 0649833ed8982e5419b0a4eb0e196a28
   m_configObjects: {}
