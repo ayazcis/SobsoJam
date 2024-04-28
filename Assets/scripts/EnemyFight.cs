@@ -129,7 +129,9 @@ public class EnemyFight : MonoBehaviour
 	IEnumerator died()
 	{   
 		yield return new WaitForSeconds(1f);
+		Debug.Log("good: " + inventory.food + inventory.water + inventory.gold);
 		addGood();
+        Debug.Log("good: " + inventory.food + inventory.water + inventory.gold);
 
         Debug.Log("aaaaaa");
 		SceneManager.LoadScene(2);

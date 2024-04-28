@@ -1575,7 +1575,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "G\xFCnlerdir \xE7\xF6ldeyim, erzag\u0131m t\xFCkenmeye basl\u0131yor.\nKars\u0131las\u0131p
+  m_text: "Aylard\u0131r \xE7\xF6ldeyim, erzag\u0131m t\xFCkenmeye basl\u0131yor.\nKars\u0131las\u0131p
     \xF6ld\xFCrd\xFCg\xFCm hayduttan ald\u0131g\u0131m su ve yemek olmasa ne yapard\u0131m
     bilmiyorum.\nAyr\u0131ca \xF6zlem atesiyle yan\u0131p tutusuyorum,ah sevgilim
     umar\u0131m tekrar bulusuruz.\n"
@@ -6673,7 +6673,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "5. G\xFCn"
+  m_text: "32. G\xFCn"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5ede429365761740a1c63c22c7a6bb4, type: 2}
   m_sharedMaterial: {fileID: -8830755279346172193, guid: b5ede429365761740a1c63c22c7a6bb4, type: 2}
