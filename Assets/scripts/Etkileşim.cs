@@ -10,6 +10,7 @@ public class Etkileşim : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.CompareTag("Player"))
         {
             isTriggered = 1;
@@ -32,7 +33,8 @@ public class Etkileşim : MonoBehaviour
     {
         if(isTriggered == 1 && Input.GetKeyDown("e"))
         {
-            diyalog.SetActive(true);
+			tus.gameObject.SetActive(false);
+			diyalog.SetActive(true);
             Time.timeScale = 0;
         }
 

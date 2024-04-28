@@ -58,7 +58,10 @@ public class MainCharWalk : MonoBehaviour
 
         // Swap direction of sprite depending on walk direction
         if (inputX > 0)
+        {
+            Debug.Log("aldi");
             transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+        }
         else if (inputX < 0)
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
