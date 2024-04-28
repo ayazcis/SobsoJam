@@ -15,7 +15,8 @@ public class MainCharWalk : MonoBehaviour
     private bool m_grounded = false;
     private bool m_combatIdle = false;
     private bool m_isDead = false;
-    [SerializeField] Inventory inventory;
+    private GameObject inventoryGO;
+    private Inventory inventory;
     public int activeSceneIndex;
 
     [SerializeField] public TMP_Text Text_water;
@@ -25,10 +26,12 @@ public class MainCharWalk : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        inventoryGO = GameObject.Find("InventoryManager");
+        inventory = inventoryGO.GetComponent<Inventory>();
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
-
+        
         activeSceneIndex = SceneManager.GetActiveScene().buildIndex;
         //Text_water = new TextMeshPro();
     }
