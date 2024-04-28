@@ -117,10 +117,5 @@ public class MainCharWalk : MonoBehaviour
             Debug.Log("water :" + inventory.water + "\nfood :" + inventory.food + "gold :" + inventory.gold);
             updateText();
         }
-
-        else if(activeSceneIndex == 2 && inventory.gold >= 25)
-        {
-            inventory.gold -= 25;
-        }
     }
 }
