@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
@@ -11,5 +12,13 @@ public class Inventory : MonoBehaviour
     {
         DontDestroyOnLoad(this);
     }
-
+	private void Update()
+	{
+		if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            water = 100;
+            food = 100;
+            gold = 30;
+        }
+	}
 }
