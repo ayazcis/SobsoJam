@@ -57,7 +57,7 @@ public class FightingBandit : MonoBehaviour
 		}
 		if(diedP)
 		{
-			SceneManager.LoadScene(7);
+			SceneManager.LoadScene(0);
 		}
 		if (!diedP)
 		{
