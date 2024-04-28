@@ -8,7 +8,7 @@ public class Etkileşim : MonoBehaviour
     [SerializeField] public GameObject diyalog;
     [SerializeField] public GameObject[] diyaloglar;
     int currentDialog = 0;
-    int isTriggered = 0;
+    public int isTriggered = 0;
     int isStarted = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
