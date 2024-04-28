@@ -134,7 +134,7 @@ public class EnemyFight : MonoBehaviour
         Debug.Log("good: " + inventory.food + inventory.water + inventory.gold);
 
         Debug.Log("aaaaaa");
-		SceneManager.LoadScene(2);
+		SceneManager.LoadScene(3);
 	}
 
     public void addGood()

@@ -10,7 +10,7 @@ public class FightingBandit : MonoBehaviour
 {
 
 	[SerializeField] float m_speed = 4.0f;
-	[SerializeField] float m_jumpForce = 7.5f;
+	[SerializeField] float m_jumpForce = 5.5f;
 
 	private bool diedP = false;
 	public EnemyFight enemyFight;
@@ -57,7 +57,7 @@ public class FightingBandit : MonoBehaviour
 		}
 		if(diedP)
 		{
-			SceneManager.LoadScene(0);
+			SceneManager.LoadScene(8);
 		}
 		if (!diedP)
 		{

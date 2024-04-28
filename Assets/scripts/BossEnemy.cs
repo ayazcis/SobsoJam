@@ -139,7 +139,7 @@ public class BossEnemy : MonoBehaviour
 	IEnumerator died()
 	{
 		yield return new WaitForSeconds(1f);
-		SceneManager.LoadScene(3);
+		SceneManager.LoadScene(4);
 	}
 
 }

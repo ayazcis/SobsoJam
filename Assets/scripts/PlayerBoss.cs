@@ -57,7 +57,7 @@ public class PlayerBoss : MonoBehaviour
 		}
 		if (diedP)
 		{
-			SceneManager.LoadScene(0);
+			SceneManager.LoadScene(8);
 		}
 		if (!diedP)
 		{
