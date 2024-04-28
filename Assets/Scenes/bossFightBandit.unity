@@ -1536,6 +1536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tus: {fileID: 2022471006}
   diyalog: {fileID: 318089739}
+  diyaloglar: []
 --- !u!1 &1115781769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,7 +2290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1893577653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3224,7 +3225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 4
-  m_jumpForce: 7.5
+  m_jumpForce: 5.5
   enemyFight: {fileID: 8534649848444758188}
   enemy: {fileID: 6194042236851379466}
   attackRange: 0.9
@@ -3281,6 +3282,7 @@ MonoBehaviour:
   enemyHeart: {fileID: 88140136}
   canvas: {fileID: 1893577652}
   talked: 0
+  canCanvas: {fileID: 1893577652}
   fightingBandit: {fileID: 8423792323184202374}
   healthEnemy: 140
   m_speed: 4

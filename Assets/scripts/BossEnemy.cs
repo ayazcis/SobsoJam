@@ -16,6 +16,7 @@ public class BossEnemy : MonoBehaviour
 	public GameObject canvas;
 
 	public bool talked = false;
+	public GameObject canCanvas;
 
 	public PlayerBoss fightingBandit;
 	public int healthEnemy = 100;
@@ -53,6 +54,7 @@ public class BossEnemy : MonoBehaviour
 	{
 		if (talked)
 		{
+			canCanvas.SetActive(true);
 			enemyHeart.fillAmount = (float)healthEnemy / 100f;
 			if (enemyHeart.fillAmount == 0f)
 			{
