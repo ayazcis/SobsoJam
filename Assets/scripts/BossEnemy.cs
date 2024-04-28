@@ -4,11 +4,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BossFight : MonoBehaviour
+public class BossEnemy : MonoBehaviour
 {
 	public float damageTime = 2f;
 	public float detectionRadius = 5f;
-	public float talkRadius = 7f;
 	public float attackDistance = 1.6f;
 	public float runToEnemySpeed = 4.5f;
 	public GameObject player;
@@ -16,14 +15,13 @@ public class BossFight : MonoBehaviour
 
 	public GameObject canvas;
 
-	public FightingBandit fightingBandit;
+	public bool talked = false;
+
+	public PlayerBoss fightingBandit;
 	public int healthEnemy = 100;
 
-	public GameObject eLetter;
-	public GameObject canvasTalk;
-
 	private bool attacking = false;
-	private bool diedE=false;
+	private bool diedE = false;
 	private bool attackState = false;
 	[SerializeField] float m_speed = 4.0f;
 	[SerializeField] float m_jumpForce = 7.5f;
@@ -35,7 +33,6 @@ public class BossFight : MonoBehaviour
 	private bool m_combatIdle = false;
 	private bool m_isDead = false;
 
-	public bool talked = false;
 	public int water;
 	public int food;
 
@@ -47,22 +44,13 @@ public class BossFight : MonoBehaviour
 		m_animator = GetComponent<Animator>();
 		m_body2d = GetComponent<Rigidbody2D>();
 		m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
-	
+
 	}
 
 
-    // Update is called once per frame
-    void Update()
-    {
-		if(Vector2.Distance(transform.position, player.transform.position) <= talkRadius)
-		{
-			eLetter.SetActive(true);
-			if (Input.GetKeyDown("e"))
-			{
-				eLetter.SetActive(false);
-				canvasTalk.SetActive(true);
-			}
-		}
+	// Update is called once per frame
+	void Update()
+	{
 		if (talked)
 		{
 			enemyHeart.fillAmount = (float)healthEnemy / 100f;
@@ -123,7 +111,8 @@ public class BossFight : MonoBehaviour
 
 
 			}
-		
+
+
 
 		}
 	}
@@ -135,8 +124,8 @@ public class BossFight : MonoBehaviour
 			fightingBandit.health -= 10; // Her seferinde 10 hasar alacak, deðiþtirebilirsiniz
 			Debug.Log(fightingBandit.health + "  HEALTH ");
 		}
-			
-		
+
+
 	}
 
 

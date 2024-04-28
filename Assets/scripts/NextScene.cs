@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
-    int current = SceneManager.GetActiveScene().buildIndex;
-    void Start()
+   
+    public void nextScene()
     {
-        SceneManager.LoadScene(current + 1);
+		int current = SceneManager.GetActiveScene().buildIndex;
+		SceneManager.LoadScene(current + 1);
     }
 }
