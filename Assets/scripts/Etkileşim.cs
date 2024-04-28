@@ -32,6 +32,7 @@ public class Etkileşim : MonoBehaviour
     {
         if(isTriggered == 1 && Input.GetKeyDown("e"))
         {
+            tus.gameObject.SetActive(false);
             diyalog.SetActive(true);
             Time.timeScale = 0;
         }
