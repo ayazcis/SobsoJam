@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyFight : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class EnemyFight : MonoBehaviour
 	public float attackDistance = 1.6f;
 	public float runToEnemySpeed = 4.5f;
 	public GameObject player;
+	public Image enemyHeart;
+
+	public GameObject canvas;
 
 	public FightingBandit fightingBandit;
 	public int healthEnemy = 100;
@@ -45,6 +49,11 @@ public class EnemyFight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		enemyHeart.fillAmount = (float)healthEnemy / 100f;
+		if(enemyHeart.fillAmount == 0f)
+		{
+			canvas.SetActive(false);
+		}
 		if (healthEnemy <= 0)
 		{
 			diedE = true;
@@ -104,7 +113,7 @@ public class EnemyFight : MonoBehaviour
 		if (Vector2.Distance(transform.position, player.transform.position) <= attackDistance)
 		{
 			fightingBandit.m_animator.SetTrigger("Hurt");
-			fightingBandit.health -= 5; // Her seferinde 10 hasar alacak, deðiþtirebilirsiniz
+			fightingBandit.health -= 10; // Her seferinde 10 hasar alacak, deðiþtirebilirsiniz
 			Debug.Log(fightingBandit.health + "  HEALTH ");
 		}
 			

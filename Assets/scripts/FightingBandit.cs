@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
+using UnityEngine.UI;
 
 public class FightingBandit : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class FightingBandit : MonoBehaviour
 	public EnemyFight enemyFight;
 	public GameObject enemy;
 	public float attackRange = 0.9f;
+
+	public Image playerHeart;
 
 	public Animator m_animator;
 	private Rigidbody2D m_body2d;
@@ -43,6 +47,8 @@ public class FightingBandit : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		playerHeart.fillAmount = (float)health / 100f;
+
 		if (health <= 0)
 		{
 			diedP = true;
@@ -71,7 +77,9 @@ public class FightingBandit : MonoBehaviour
 
 			// Swap direction of sprite depending on walk direction
 			if (inputX > 0)
+			{
 				transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+			}
 			else if (inputX < 0)
 				transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
