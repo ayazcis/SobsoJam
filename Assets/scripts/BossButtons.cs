@@ -43,4 +43,9 @@ public class BossButtons : MonoBehaviour
         #endif
     }
 
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }
