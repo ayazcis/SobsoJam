@@ -31,5 +31,16 @@ public class BossButtons : MonoBehaviour
 	{
 		SceneManager.LoadScene(2);
 	}
-    
+
+    public void ExitGame()
+    {
+        #if UNITY_EDITOR
+            // Unity Editörde ise oyunu durdur
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                // Unity Editörde deðilse oyunu kapat
+                Application.Quit();
+        #endif
+    }
+
 }
