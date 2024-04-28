@@ -25,10 +25,11 @@ public class BossButtons : MonoBehaviour
 	}
     public void dovusYukle()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(5);
     }
 	public void banditGel()
 	{
 		SceneManager.LoadScene(2);
 	}
+    
 }

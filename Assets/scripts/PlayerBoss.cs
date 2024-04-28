@@ -4,12 +4,12 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class PlayerBoss : MonoBehaviour
 {
 
 	[SerializeField] float m_speed = 4.0f;
-	[SerializeField] float m_jumpForce = 7.5f;
+	[SerializeField] float m_jumpForce = 5.5f;
 
 	private bool diedP = false;
 	public BossEnemy enemyFight;
@@ -53,6 +53,10 @@ public class PlayerBoss : MonoBehaviour
 		{
 			diedP = true;
 			m_animator.SetTrigger("Death");
+		}
+		if (diedP)
+		{
+			SceneManager.LoadScene(0);
 		}
 		if (!diedP)
 		{

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
+
 
 public class EnemyFight : MonoBehaviour
 {
@@ -22,7 +25,7 @@ public class EnemyFight : MonoBehaviour
 	private bool diedE=false;
 	private bool attackState = false;
 	[SerializeField] float m_speed = 4.0f;
-	[SerializeField] float m_jumpForce = 7.5f;
+	[SerializeField] float m_jumpForce = 5.5f;
 
 	public Animator m_animator;
 	private Rigidbody2D m_body2d;
@@ -58,7 +61,9 @@ public class EnemyFight : MonoBehaviour
 		{
 			diedE = true;
 			m_animator.SetTrigger("Death");
-			Destroy(gameObject, 1f);
+			
+			StartCoroutine( died());
+			
 		}
 
 		if (Vector2.Distance(transform.position, player.transform.position) <= detectionRadius  && !diedE)
@@ -119,6 +124,12 @@ public class EnemyFight : MonoBehaviour
 			
 		
 	}
-
+	IEnumerator died()
+	{
+		
+		yield return new WaitForSeconds(1f);
+		Debug.Log("aaaaaa");
+		SceneManager.LoadScene(2);
+	}
 
 }

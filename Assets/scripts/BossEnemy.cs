@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class BossEnemy : MonoBehaviour
 {
@@ -71,6 +73,14 @@ public class BossEnemy : MonoBehaviour
 			{
 				attackState = true;
 			}
+			if (healthEnemy <= 0)
+			{
+				diedE = true;
+				m_animator.SetTrigger("Death");
+				Destroy(gameObject, 1f);
+				StartCoroutine(died());
+
+			}
 			else if (!diedE)
 			{
 				attackState = false;
@@ -129,6 +139,10 @@ public class BossEnemy : MonoBehaviour
 
 
 	}
-
+	IEnumerator died()
+	{
+		yield return new WaitForSeconds(1f);
+		SceneManager.LoadScene(3);
+	}
 
 }

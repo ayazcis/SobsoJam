@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FightingBandit : MonoBehaviour
 {
@@ -53,6 +54,10 @@ public class FightingBandit : MonoBehaviour
 		{
 			diedP = true;
 			m_animator.SetTrigger("Death");
+		}
+		if(diedP)
+		{
+			SceneManager.LoadScene(0);
 		}
 		if (!diedP)
 		{
