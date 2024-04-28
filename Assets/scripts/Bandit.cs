@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Bandit : MonoBehaviour {
 
@@ -29,6 +30,7 @@ public class Bandit : MonoBehaviour {
         water = 100;
         food = 100;
         health = 100;
+        int activeSceneIndex = SceneManager.GetActiveScene().buildIndex;
         //Text_water = new TextMeshPro();
     }
 	

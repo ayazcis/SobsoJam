@@ -7,6 +7,7 @@ public class StartFight : MonoBehaviour
 {
     public void startFight()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
     }
 }

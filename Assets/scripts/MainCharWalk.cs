@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MainCharWalk : MonoBehaviour
 {
@@ -14,13 +15,12 @@ public class MainCharWalk : MonoBehaviour
     private bool m_grounded = false;
     private bool m_combatIdle = false;
     private bool m_isDead = false;
-
-    public int water;
-    public int food;
-    public int health;
+    [SerializeField] Inventory inventory;
+    public int activeSceneIndex;
 
     [SerializeField] public TMP_Text Text_water;
     [SerializeField] public TMP_Text Text_bread;
+    [SerializeField] public TMP_Text Text_coin;
 
     // Use this for initialization
     void Start()
@@ -28,9 +28,8 @@ public class MainCharWalk : MonoBehaviour
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
-        water = 100;
-        food = 100;
-        health = 100;
+
+        activeSceneIndex = SceneManager.GetActiveScene().buildIndex;
         //Text_water = new TextMeshPro();
     }
 
@@ -84,10 +83,10 @@ public class MainCharWalk : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Checkpoint"))
         {
-            food = food - 10;
-            water = water - 10;
+            inventory.food = inventory.food - 10;
+            inventory.water = inventory.water - 10;
             Destroy(collision.gameObject);
-            Debug.Log("water :" + water + "\nfood :" + food);
+            Debug.Log("water :" + inventory.water + "\nfood :" + inventory.food);
             updateText();
         }
     }
@@ -96,8 +95,26 @@ public class MainCharWalk : MonoBehaviour
     void updateText()
     {
         //Text_water.SetText(water.ToString());
-        Text_water.text = water.ToString();
-        Text_bread.text = food.ToString();
+        Text_water.text = inventory.water.ToString();
+        Text_bread.text = inventory.food.ToString();
+        Text_coin.text = inventory.gold.ToString();
 
+    }
+
+    public void updateGold()
+    {
+        if(activeSceneIndex == 1 && inventory.gold >= 20)
+        {
+            inventory.gold = inventory.gold - 20;
+            inventory.food = inventory.food + 25;
+            inventory.water = inventory.water + 25;
+            Debug.Log("water :" + inventory.water + "\nfood :" + inventory.food + "gold :" + inventory.gold);
+            updateText();
+        }
+
+        else if(activeSceneIndex == 2 && inventory.gold >= 25)
+        {
+            inventory.gold -= 25;
+        }
     }
 }
