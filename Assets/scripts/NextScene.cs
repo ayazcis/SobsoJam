@@ -8,12 +8,6 @@ public class NextScene : MonoBehaviour
     int current = SceneManager.GetActiveScene().buildIndex;
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene(current + 1);
     }
 }
