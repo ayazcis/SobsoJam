@@ -21,7 +21,7 @@ public class BossEnemy : MonoBehaviour
 	public GameObject canCanvas;
 
 	public PlayerBoss fightingBandit;
-	public int healthEnemy = 100;
+	public int healthEnemy = 150;
 
 	private bool attacking = false;
 	private bool diedE = false;
