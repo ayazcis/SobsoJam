@@ -3562,6 +3562,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8423792323184202374}
+        m_TargetAssemblyTypeName: PlayerBoss, Assembly-CSharp
+        m_MethodName: addGood
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1447630877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5171,10 +5183,10 @@ MonoBehaviour:
   attackRange: 0.9
   playerHeart: {fileID: 404601451}
   m_animator: {fileID: 0}
-  water: 0
-  food: 0
   health: 100
-  Text_water: {fileID: 0}
+  Text_water: {fileID: 2116110175}
+  Text_bread: {fileID: 1887762312}
+  Text_coin: {fileID: 545981003}
 --- !u!50 &8534649848444758187
 Rigidbody2D:
   serializedVersion: 4

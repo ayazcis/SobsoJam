@@ -25,22 +25,23 @@ public class PlayerBoss : MonoBehaviour
 	private bool m_grounded = false;
 	private bool m_combatIdle = false;
 	private bool m_isDead = false;
+	public int health;
+    private GameObject inventoryGO;
+    private Inventory inventory;
 
-	public int water;
-	public int food;
-	public int health = 100;
+    [SerializeField] public TMP_Text Text_water;
+    [SerializeField] public TMP_Text Text_bread;
+    [SerializeField] public TMP_Text Text_coin;
 
-	[SerializeField] public TMP_Text Text_water;
-
-	// Use this for initialization
-	void Start()
+    // Use this for initialization
+    void Start()
 	{
-		m_animator = GetComponent<Animator>();
+		health = 100;
+        inventoryGO = GameObject.Find("InventoryManager");
+        inventory = inventoryGO.GetComponent<Inventory>();
+        m_animator = GetComponent<Animator>();
 		m_body2d = GetComponent<Rigidbody2D>();
 		m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
-		water = 100;
-		food = 100;
-		health = 100;
 		//Text_water = new TextMeshPro();
 	}
 
@@ -148,25 +149,33 @@ public class PlayerBoss : MonoBehaviour
 	{
 		if (collision.gameObject.CompareTag("Checkpoint"))
 		{
-			food = food - 10;
-			water = water - 10;
+            inventory.food = inventory.food - 10;
+            inventory.water = inventory.water - 10;
 			Destroy(collision.gameObject);
-			Debug.Log("water :" + water + "\nfood :" + food);
+			Debug.Log("water :" + inventory.water + "\nfood :" + inventory.food);
 			updateText();
 		}
 	}
 
-
-	void updateText()
+	public void addGood()
 	{
-		//Text_water.SetText(water.ToString());
-		Text_water.text = water.ToString();
-
+		inventory.food += 20;
+		inventory.water += 20;
 	}
 
 
+    void updateText()
+    {
+        //Text_water.SetText(water.ToString());
+        Text_water.text = inventory.water.ToString();
+        Text_bread.text = inventory.food.ToString();
+        Text_coin.text = inventory.gold.ToString();
 
-	public void DamageReciveEnemy()
+    }
+
+
+
+    public void DamageReciveEnemy()
 	{
 		if (Vector2.Distance(transform.position, enemy.transform.position) <= attackRange && enemyFight.talked)
 		{
