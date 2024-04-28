@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Etkileşim : MonoBehaviour
 {
@@ -68,7 +70,7 @@ public class Etkileşim : MonoBehaviour
             }
             else
             {
-
+                SceneManager.LoadScene(6);
             }
         }
     }
