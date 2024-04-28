@@ -33,8 +33,9 @@ public class EnemyFight : MonoBehaviour
 	private bool m_grounded = false;
 	private bool m_combatIdle = false;
 	private bool m_isDead = false;
-
-	public int water;
+    private GameObject inventoryGO;
+    private Inventory inventory;
+    public int water;
 	public int food;
 
 	[SerializeField] public TMP_Text Text_water;
@@ -45,8 +46,9 @@ public class EnemyFight : MonoBehaviour
 		m_animator = GetComponent<Animator>();
 		m_body2d = GetComponent<Rigidbody2D>();
 		m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
-	
-	}
+        inventoryGO = GameObject.Find("InventoryManager");
+        inventory = inventoryGO.GetComponent<Inventory>();
+    }
 
 
     // Update is called once per frame
@@ -125,11 +127,18 @@ public class EnemyFight : MonoBehaviour
 		
 	}
 	IEnumerator died()
-	{
-		
+	{   
 		yield return new WaitForSeconds(1f);
-		Debug.Log("aaaaaa");
+		addGood();
+
+        Debug.Log("aaaaaa");
 		SceneManager.LoadScene(2);
 	}
 
+    public void addGood()
+    {
+        inventory.food += 20;
+        inventory.water += 20;
+        inventory.gold += 20;
+    }
 }

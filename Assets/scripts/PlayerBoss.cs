@@ -161,6 +161,7 @@ public class PlayerBoss : MonoBehaviour
 	{
 		inventory.food += 20;
 		inventory.water += 20;
+		inventory.gold += 20;
 	}
 
 
