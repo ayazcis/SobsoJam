@@ -28,8 +28,9 @@ public class BossEnemy : MonoBehaviour
 	private bool attackState = false;
 	[SerializeField] float m_speed = 4.0f;
 	[SerializeField] float m_jumpForce = 7.5f;
-
-	public Animator m_animator;
+    private GameObject inventoryGO;
+    private Inventory inventory;
+    public Animator m_animator;
 	private Rigidbody2D m_body2d;
 	private Sensor_Bandit m_groundSensor;
 	private bool m_grounded = false;
@@ -47,8 +48,9 @@ public class BossEnemy : MonoBehaviour
 		m_animator = GetComponent<Animator>();
 		m_body2d = GetComponent<Rigidbody2D>();
 		m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
-
-	}
+        inventoryGO = GameObject.Find("InventoryManager");
+        inventory = inventoryGO.GetComponent<Inventory>();
+    }
 
 
 	// Update is called once per frame
@@ -66,7 +68,7 @@ public class BossEnemy : MonoBehaviour
 		
 			if (healthEnemy <= 0)
 			{
-				diedE = true;
+                diedE = true;
 				m_animator.SetTrigger("Death");
 				StartCoroutine(died());
 
@@ -139,7 +141,14 @@ public class BossEnemy : MonoBehaviour
 	IEnumerator died()
 	{
 		yield return new WaitForSeconds(1f);
-		SceneManager.LoadScene(4);
+        addGood();
+        SceneManager.LoadScene(4);
 	}
 
+    public void addGood()
+    {
+        inventory.food += 20;
+        inventory.water += 20;
+        inventory.gold += 20;
+    }
 }
