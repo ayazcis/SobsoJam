@@ -7,6 +7,8 @@ TagManager:
   - ground
   - Checkpoint
   - enemy
+  - tavern
+  - E
   layers:
   - Default
   - TransparentFX
@@ -46,4 +48,7 @@ TagManager:
     locked: 0
   - name: foreground
     uniqueID: 1655275553
+    locked: 0
+  - name: e
+    uniqueID: 3914592897
     locked: 0
