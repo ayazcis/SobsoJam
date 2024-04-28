@@ -49,7 +49,11 @@ public class Etkileşim : MonoBehaviour
     private void Update()
     {
         CanvasOpen();
-        TalkWithNpc();
+        if(SceneManager.GetActiveScene().buildIndex == 4)
+        {
+			TalkWithNpc();
+		}
+        
     }
 
     public void TimeScaleToNormal()
@@ -59,8 +63,10 @@ public class Etkileşim : MonoBehaviour
 
     public void TalkWithNpc()
     {
+        Debug.LogError("TalkWithNpc");
+		Debug.LogError("isStarted: " + isStarted);
 
-        if(isStarted == 1 && Input.GetMouseButtonDown(0))
+		if (isStarted == 1 && Input.GetMouseButtonDown(0))
         {
             if(currentDialog + 1 < diyaloglar.Length)
             {
