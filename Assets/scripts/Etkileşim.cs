@@ -49,7 +49,7 @@ public class Etkileşim : MonoBehaviour
     private void Update()
     {
         CanvasOpen();
-        if(SceneManager.GetActiveScene().buildIndex == 4)
+        if(SceneManager.GetActiveScene().buildIndex == 5)
         {
 			TalkWithNpc();
 		}
@@ -76,7 +76,7 @@ public class Etkileşim : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene(6);
+                SceneManager.LoadScene(7);
             }
         }
     }

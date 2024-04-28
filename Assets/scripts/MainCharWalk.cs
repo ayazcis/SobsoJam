@@ -109,7 +109,7 @@ public class MainCharWalk : MonoBehaviour
 
     public void updateGold()
     {
-        if(activeSceneIndex == 1 && inventory.gold >= 20)
+        if(activeSceneIndex == 2 && inventory.gold >= 20)
         {
             inventory.gold = inventory.gold - 20;
             inventory.food = inventory.food + 25;
