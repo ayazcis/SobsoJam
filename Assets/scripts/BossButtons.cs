@@ -8,7 +8,7 @@ public class BossButtons : MonoBehaviour
 {
     public GameObject altin;
     public Canvas dialogCan;
-    public BossEnemy bossEnemy;
+    [SerializeField] public BossEnemy bossEnemy;
     public void AltinYok()
     {
         Debug.Log("altii");

@@ -54,33 +54,30 @@ public class BossEnemy : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		Debug.Log(talked);
 		if (talked)
 		{
 			canCanvas.SetActive(true);
-			enemyHeart.fillAmount = (float)healthEnemy / 100f;
+			enemyHeart.fillAmount = (float)healthEnemy / 150f;
 			if (enemyHeart.fillAmount == 0f)
 			{
 				canvas.SetActive(false);
 			}
+		
 			if (healthEnemy <= 0)
 			{
 				diedE = true;
 				m_animator.SetTrigger("Death");
-				Destroy(gameObject, 1f);
+				StartCoroutine(died());
+
 			}
 
 			if (Vector2.Distance(transform.position, player.transform.position) <= detectionRadius && !diedE)
 			{
+				
 				attackState = true;
 			}
-			if (healthEnemy <= 0)
-			{
-				diedE = true;
-				m_animator.SetTrigger("Death");
-				Destroy(gameObject, 1f);
-				StartCoroutine(died());
-
-			}
+			
 			else if (!diedE)
 			{
 				attackState = false;
